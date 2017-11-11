@@ -1,3 +1,4 @@
-import pyautogui
+import pyautogui, time
 
-pyautogui.moveTo(1890, 10)
+time.sleep(2)
+pyautogui.moveTo(1903, 106)
