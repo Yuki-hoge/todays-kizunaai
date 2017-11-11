@@ -43,14 +43,14 @@ for video_c in items_c:
   vid = video_c['id']['videoId']
   if is_first_video:
     is_first_video = False
-    url += vid + '?autoplay=1&cc_load_policy=0&playlist='
+    url += vid + '?autoplay=1&vq=highres&playlist='
   else:
     url += vid + ','
 for video_g in items_g:
   vid = video_g['id']['videoId']
   if is_first_video:
     is_first_video = False
-    url += vid + '?autoplay=1&cc_load_policy=0&playlist='
+    url += vid + '?autoplay=1&vq=highres&playlist='
   else:
     url += vid + ','
 
