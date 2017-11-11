@@ -4,7 +4,7 @@ import subprocess, json, datetime, sys
 from myenv import KEY
 
 # template of youtube play url
-URL_TEMPLATE = 'https://www.youtube.com/watch?v='
+URL_TEMPLATE = 'https://www.youtube.com/embed/'
 
 # template of youtube search command
 SEARCH_CMD_TEMPLATE = 'curl "https://www.googleapis.com/youtube/v3/search?part=id&order=date&key=' + KEY
@@ -36,10 +36,24 @@ items_g = json.loads(out)['items']
 if len(items_c) == 0 and len(items_g) == 0:
   sys.exit()
 
-# write playlist for playing
-f = open('playlist.txt','w')
+# make playlist url for playing
+is_first_video = True
+url = URL_TEMPLATE
 for video_c in items_c:
-  f.write(URL_TEMPLATE + video_c['id']['videoId'] + '\n')
+  vid = video_c['id']['videoId']
+  if is_first_video:
+    is_first_video = False
+    url += vid + '?autoplay=1&playlist='
+  else:
+    url += vid + ','
 for video_g in items_g:
-  f.write(URL_TEMPLATE + video_g['id']['videoId'] + '\n')
+  vid = video_g['id']['videoId']
+  if is_first_video:
+    is_first_video = False
+    url += vid + '?autoplay=1&playlist='
+  else:
+    url += vid + ','
+
+f = open('playlisturl.txt','w')
+f.write(url)
 f.close()
