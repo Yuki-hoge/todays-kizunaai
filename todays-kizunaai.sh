@@ -9,4 +9,4 @@ python search.py >/dev/null 2>&1
 
 # play
 # mpv --fs --playlist=./playlist.txt
-mpv --playlist=./playlist.txt --vo-null
+mpv --playlist=./playlist.txt --vo=null
