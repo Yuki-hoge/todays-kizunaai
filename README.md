@@ -19,6 +19,8 @@
 - mpv(動画再生に使います)
 - python
   - (pyautogui)(現在の仕様では必要ありません，将来的に使います)
+### Set your google api key
+myenv.py.sample内を適切に編集，myenv.pyにリネーム
 ### Play Today's KizunaAI
 ./todays-kizunaai.sh
 ### Stop and quit for playing
