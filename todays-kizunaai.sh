@@ -9,4 +9,4 @@ python search.py >/dev/null 2>&1
 python movemouse.py
 
 # play
-chromium-browser `cat playlisturl.txt` --window-size=1920,1080 --window-pos=0,0
+chromium-browser `cat playlisturl.txt` --window-size=1920,1080 --window-pos=0,0 --incognito
