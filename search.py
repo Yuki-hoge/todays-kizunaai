@@ -39,18 +39,19 @@ if len(items_c) == 0 and len(items_g) == 0:
 # make playlist url for playing
 is_first_video = True
 url = URL_TEMPLATE
+option_template = '?autoplay=1&loop=1&vq=highres&playlist='
 for video_c in items_c:
   vid = video_c['id']['videoId']
   if is_first_video:
     is_first_video = False
-    url += vid + '?autoplay=1&vq=highres&playlist='
+    url += vid + option_template
   else:
     url += vid + ','
 for video_g in items_g:
   vid = video_g['id']['videoId']
   if is_first_video:
     is_first_video = False
-    url += vid + '?autoplay=1&vq=highres&playlist='
+    url += vid + option_template
   else:
     url += vid + ','
 
