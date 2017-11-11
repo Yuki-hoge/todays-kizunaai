@@ -8,4 +8,5 @@ xrefresh -d :0.0
 python movemouse.py
 
 # play
-mpv --fs --playlist=./playlist.txt
+# mpv --fs --playlist=./playlist.txt
+mpv --playlist=./playlist.txt --vo-null
