@@ -23,3 +23,8 @@
 ./todays-kizunaai.sh
 ### Stop and quit for playing
 ./goodbye-kizunaai.sh
+
+## TODO
+- API叩いてるとこのコードが力技過ぎるのでどうにかしたい
+- 弊環境(: RPi3)において，動画再生の際にハードウェアアクセラレーションが上手くいかない問題を解決
+- homebridgeと連携，「Hey Siri, 今日のキズナアイ」
