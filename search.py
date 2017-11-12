@@ -38,12 +38,15 @@ if len(items_c) == 0 and len(items_g) == 0:
 
 # make playlist url for playing
 is_first_video = True
+first_vid = None
 url = URL_TEMPLATE
-option_template = '?autoplay=1&loop=1&vq=highres&playlist='
+option_template = '?autoplay=1&loop=1&vq=hd720&playlist='
+
 for video_c in items_c:
   vid = video_c['id']['videoId']
   if is_first_video:
     is_first_video = False
+    first_vid = vid
     url += vid + option_template
   else:
     url += vid + ','
@@ -51,9 +54,12 @@ for video_g in items_g:
   vid = video_g['id']['videoId']
   if is_first_video:
     is_first_video = False
+    first_vid = vid
     url += vid + option_template
   else:
     url += vid + ','
+if len(items_c) + len(items_g) == 1:
+  url += first_vid
 
 f = open('playlisturl.txt','w')
 f.write(url)
